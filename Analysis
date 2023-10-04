@@ -1,0 +1,52 @@
+CamelCase:
+
+time complexity is O(n), where n is length of the input of string s. This is because the function iterates over 
+each character in the string exactly once, performing a constant amount of work for each character. 
+The isupper function and the conditional check are both constant-time operations.
+
+space complexity is  O(1), which means it uses a constant amount of 
+additional memory regardless of the size of the input string 's'.
+
+- int count = 1;: This declaration allocates space for an integer variable 'count'. It's a 
+constant-size variable and does not depend on the size of the input string.
+
+- The 'for' loop does not create any additional data structures or allocate memory dynamically based on the input size. 
+It uses a 'char' variable 'c' to iterate through the characters in the string, but 'c' 
+is just a single character variable and doesn't consume extra space.
+
+- The 'isupper' function and the conditional check inside the loop do not allocate additional memory.
+
+- There are no dynamic data structures, arrays, or recursive function calls that would cause the space usage to grow with the input size.
+
+
+
+
+
+Correctness and the Loop Invariant:
+
+time complexity is O(N^2)  in the worst case, where 'N' is the number of elements in the array.
+
+- The outer loop runs for 'N' iterations, starting from 'i = 1' and going up to 'i = N - 1'. This results in O(N) iterations.
+
+- For each iteration of the outer loop, the inner while loop runs. In the worst case, when the array is sorted 
+in reverse order, the inner loop will run for 'j' iterations for each 'i', where 'j' decreases from 'i' to 0.
+
+For 'i = 1', it runs 1 time.
+For 'i = 2', it runs 2 times.
+For 'i = 3', it runs 3 times.
+...
+For 'i = N - 1', it runs N - 1 times.
+
+The sum of these iterations is 1 + 2 + 3 + ... + (N - 1), which is equal to (N * (N - 1)) / 2.
+
+- The outer loop and the inner loop together result in a total number of iterations proportional 
+to N * (N - 1) / 2, which is equivalent to O(N^2) in terms of time complexity.
+
+
+space complexity is  O(N) due to the array arr and a few integer variables that do not depend on the size of the input.
+
+- int arr[N]: This declares an integer array of size 'N'. The space required for this array is O(N) since its size is directly proportional to the input size.
+
+- int i and int j: These are integer variables used for loop indexing. They do not depend on the input size and occupy constant space.
+
+- int value: This is an integer variable used to temporarily store values during the insertion sort. Like 'i' and 'j', it also occupies constant space.
